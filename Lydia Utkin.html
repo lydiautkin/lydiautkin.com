@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///Users/lydiautkin/lydiautkin.com/index.html#skills -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Lydia Utkin</title>
+    <link rel="stylesheet" href="./Lydia Utkin_files/styles.css">
+  </head>
+  <body>
+    <!-- <div id="container"> -->
+      <div id="navbar">
+        <div id="navheader">
+          LYDIA UTKIN
+        </div>
+        <div id="navlinks">
+          <a href="file:///Users/lydiautkin/lydiautkin.com/index.html#about" class="navlink">About</a>
+          <a href="file:///Users/lydiautkin/lydiautkin.com/index.html#skills" class="navlink">Skills</a>
+          <a href="file:///Users/lydiautkin/lydiautkin.com/index.html#projects" class="navlink">Projects</a>
+          <a href="file:///Users/lydiautkin/lydiautkin.com/index.html#contact" class="navlink">Contact</a>
+        </div>
+      </div>
+      <div id="container">
+        <div id="about" class="section">
+          <b>about: </b>hi, I'm Lydia
+        </div>
+        <div id="skills" class="section">
+          <b>skills: </b>javascript, html, css, etc.
+        </div>
+        <div id="projects" class="section"><b>projects: </b>some of my projects</div>
+        <div id="contact" class="section"><b>contact: </b>contact me</div>
+        <div id="lydia" style="background-color: rgba(190, 40, 40, 0);">lydia</div>
+      </div>
+    <!-- </div> -->
+    <script>
+      const numSteps = 20.0;
+      let boxElement;
+      let prevRatio = 0.0;
+      let increasingColor = "rgba(40, 40, 190, ratio)";
+      let decreasingColor = "rgba(190, 40, 40, ratio)";
+
+      // Set things up
+      window.addEventListener("load", (event) => {
+        boxElement = document.querySelector("#skills");
+
+        createObserver();
+      }, false);
+
+      function createObserver() {
+        let observer;
+
+        let options = {
+          root: null,
+          rootMargin: "0px",
+          threshold: buildThresholdList()
+        };
+
+        observer = new IntersectionObserver(handleIntersect, options);
+        observer.observe(boxElement);
+      }
+
+      function buildThresholdList() {
+        let thresholds = [];
+        let numSteps = 20;
+
+        for (let i=1.0; i<=numSteps; i++) {
+          let ratio = i/numSteps;
+          thresholds.push(ratio);
+        }
+
+        thresholds.push(0);
+        return thresholds;
+      }
+
+      function handleIntersect(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > prevRatio) {
+            document.querySelector("#lydia").style.backgroundColor = increasingColor.replace("ratio", entry.intersectionRatio);
+          } else {
+            document.querySelector("#lydia").style.backgroundColor = decreasingColor.replace("ratio", entry.intersectionRatio);
+          }
+
+          prevRatio = entry.intersectionRatio;
+        });
+      }
+    </script>
+  
+
+</body></html>
