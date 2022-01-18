@@ -1,4 +1,4 @@
-/*** SHARED ***/
+/*** START SHARED ***/
 
 * {
     padding: 0;
@@ -14,7 +14,7 @@
 
 .content {
     width: 100%;
-    max-width: 1024px;
+    max-width: 940px;
 }
 
 .button {
@@ -24,6 +24,8 @@
     border-radius: 8px;
     display: inline-block;
     font-weight: 400;
+    border: black solid 1px;
+    /* background: linear-gradient(180deg, #BED8FF 0%, #000C1D 100%); */
 }
 
 .button:hover {
@@ -41,6 +43,25 @@
     position: relative;
     float: right;
 }
+
+/* .trees {
+    position: absolute;
+    top: 750px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+} */
+
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 200px solid #000c1d;
+    position: relative;
+}
+
+/*** END SHARED ***/
 
 body {
     background-color: #000C1D;
@@ -67,7 +88,7 @@ body {
     clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100% );
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100% );
     padding-top: 40px;
-    min-height: 1000px;
+    height: 800px;
 }
 
 #navbar {
@@ -76,6 +97,7 @@ body {
     justify-content: space-between;
     z-index: 100;
     flex: 0 0 auto;
+    margin-bottom: 80px;
 }
 
 #navheader {
@@ -111,13 +133,14 @@ body {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    flex: 1 1 auto;
+    height: 100%;
 }
 
 #abouttext {
     flex: 1 1 50%;
     font-size: 18px;
     min-width: 250px;
+    margin-bottom: 40px;
 }
 
 #header {
@@ -142,12 +165,12 @@ body {
 
 #lydia {
     position: relative;
-    width: 400px;
+    min-width: 250px;
     min-height: 300px;
     background-color: lightgrey;
     flex: 1 1 auto;
     margin-right: 80px;
-    height: 100%;
+    margin-bottom: 40px;
     color: black;
 }
 
