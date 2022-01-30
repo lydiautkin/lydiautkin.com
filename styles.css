@@ -44,13 +44,13 @@
     float: right;
 }
 
-/* .trees {
-    position: absolute;
-    top: 750px;
+.trees {
+    /* position: relative; */
+    /* top: 100px; */
     display: flex;
     justify-content: center;
     width: 100%;
-} */
+}
 
 .triangle-up {
 	width: 0;
@@ -78,8 +78,144 @@ body {
     z-index: 10;
 }
 
+.smallstar {
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    z-index: 100;
+    animation: blinker 3s ease-in-out infinite;
+    opacity: 0.95;
+}
+
+.largestar {
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    z-index: 100;
+    animation: blinker 3s ease-in-out infinite;
+    opacity: 0.75;
+}
+
+#star1 {
+    top: 10px;
+    left: 10%;
+    animation-delay: 1.5s;
+}
+
+#star2 {
+    top: 250px;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+#star3 {
+    top: 50px;
+    left: 40%;
+    animation-delay: 2.5s;
+}
+
+#star4 {
+    top: 500px;
+    left: 60%;
+    animation-delay: 0.5s;
+}
+
+#star5 {
+    top: 550px;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+#star6 {
+    top: 100px;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+#star7 {
+    top: 150px;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+#star8 {
+    top: 350px;
+    left: 35%;
+    animation-delay: 2s;
+}
+
+#star9 {
+    top: 400px;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+#star10 {
+    top: 525px;
+    left: 90%;
+    animation-delay: 2s;
+}
+
+.shootingstar {
+    position: absolute;
+    animation: shootingstar 10s ease-in infinite;
+    height: 100px;
+    width: 5px;
+    background: linear-gradient(
+-45deg
+, rgba(255, 255, 255, 1), rgba(0, 0, 255, 0));
+    /* border-radius: 999px; */
+    filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
+    z-index: 100;
+    transform: rotate(-65deg);
+}
+
+/* #moon {
+    position: absolute;
+    top: 50px;
+    left: 40%;
+    background-color: white;
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    z-index: 100;
+    animation: blinker 5s ease-in-out infinite;
+    opacity: 0.75;
+} */
+
+@keyframes blinker {
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+@keyframes shootingstar {
+    0% {
+        left: -100px;
+        top: 20px;
+        opacity: 1;
+    }
+    30% {
+        top: 600px;
+        left: 120%;
+        opacity: 1;
+    }
+    31% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+
+    /* TODO: Hide shooting star at the end */
+}
+
 #about {
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
     display: flex;
     flex-flow: column;
     align-items: center;
