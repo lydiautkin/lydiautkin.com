@@ -308,7 +308,7 @@ body {
     padding-top: 80px;
 }
 
-.work, .project {  
+.project {  
     min-width: 225px;
     max-width: 275px;
     flex: 1 1 auto;
@@ -318,6 +318,21 @@ body {
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+}
+
+#workcontainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.work {
+    display: flex;
+    width: 100%;
+}
+
+#mocaimg {
+    width: 75%;
+    border: 10px #0049B6 solid;
 }
 
 #mocaimgwrap {
@@ -348,7 +363,13 @@ body {
     justify-content: center;
     color: white;
     text-align: center;
-    width: 190px;
+    /* width: 190px; */
+    background-color: #0049B6;
+    height: 100px;
+    margin-left: -100px;
+    padding: 20px;
+    margin-top: 40px;
+    border: 10px #a9cafc solid;
 }
 
 /* #mocaimg {
@@ -370,7 +391,7 @@ body {
     padding-top: 40px;
 }
 
-#projectscontainer, #workcontainer {
+#projectscontainer {
     display: flex;
     justify-content: space-between;
 }
